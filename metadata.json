@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Archie Viterbo",
+  "description": "An interactive high-tech portfolio website for Archie D. Viterbo featuring a cyber-grid background, glowing neon yellow accents, and interactive simulated projects including a mock AI detector, social post assistant, and CTF challenge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

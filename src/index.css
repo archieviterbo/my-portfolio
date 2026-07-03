@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-yellow: #FFE600;
+  --color-cyber-dark: #0A0A0B;
+  --color-cyber-gray: #16161A;
+  --color-cyber-light: #24242B;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: #0A0A0B;
+    color: #E4E4E7;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #24242B;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFE600;
+  }
+}
+
+/* Cyber Glow Effects */
+.glow-yellow {
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.6), 0 0 20px rgba(255, 230, 0, 0.3), 0 0 30px rgba(255, 230, 0, 0.1);
+}
+
+.glow-yellow-lg {
+  text-shadow: 0 0 15px rgba(255, 230, 0, 0.8), 0 0 30px rgba(255, 230, 0, 0.5), 0 0 45px rgba(255, 230, 0, 0.3), 0 0 60px rgba(255, 230, 0, 0.1);
+}
+
+.box-glow-yellow {
+  box-shadow: 0 0 15px rgba(255, 230, 0, 0.25);
+}
+
+.box-glow-yellow-lg {
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.45);
+}
+
+/* Grid overlay background */
+.tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 230, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 230, 0, 0.03) 1px, transparent 1px);
+}
+
+.tech-grid-dots {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(255, 230, 0, 0.06) 1px, transparent 1px);
+}
+
+/* Scanline Animation */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.scanlines::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.06),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 6px 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Cyber text flicker */
+@keyframes textFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+  25% { opacity: 0.85; }
+  75% { opacity: 0.9; }
+}
+
+.text-flicker {
+  animation: textFlicker 3s infinite;
+}
+
+/* Matrix scanning line animation */
+@keyframes scanlineMove {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scanline {
+  animation: scanlineMove 6s linear infinite;
+}
+
+/* CRT monitor flickering refresh */
+@keyframes crtFlicker {
+  0% { opacity: 0.995; }
+  50% { opacity: 1; }
+  100% { opacity: 0.995; }
+}
+
+.crt-flicker {
+  animation: crtFlicker 0.15s infinite;
+}
+
